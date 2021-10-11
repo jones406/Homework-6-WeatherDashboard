@@ -16,3 +16,13 @@ fetch('api.openweathermap.org/data/2.5/forecast?id=524901&appid=f4458c0fc59bb2bc
     return response.json();
 })
 //will return resolved or rejected for a response.
+
+
+//use local storage to store persistent data
+
+
+//search for a city
+
+//get current AND future weather
+
+//return city name, date, icons rep of weather condition, temp, humidity, wind speed, UV index
