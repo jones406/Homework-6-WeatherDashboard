@@ -1,13 +1,10 @@
-//select tags in HTML to input data
+let APIkey = "f4458c0fc59bb2bcd5a17322c84ac36e";
+let city = "";
 
+//api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key} required parameters: q is the query parameter where we ad city variable and appid parameters is where we add the api key var
 
+let queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
 
-//read documentation of API
-// API ex: call http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}
-// ex 2: api.openweathermap.org/data/2.5/forecast?id=524901&appid=f4458c0fc59bb2bcd5a17322c84ac36e
-
-//make a variable to store you API key
-//APIkey = "f4458c0fc59bb2bcd5a17322c84ac36e";
 
 
 fetch('api.openweathermap.org/data/2.5/forecast?id=524901&appid=f4458c0fc59bb2bcd5a17322c84ac36e')
@@ -18,8 +15,7 @@ fetch('api.openweathermap.org/data/2.5/forecast?id=524901&appid=f4458c0fc59bb2bc
 //will return resolved or rejected for a response.
 
 
-//use local storage to store persistent data
-
+//use local storage to store persistent data\
 
 //search for a city
 
