@@ -1,17 +1,15 @@
 
-let weatherResults = document.getElementById("weatherdata");
+let weatherResults = document.getElementById("weather-table");
 let cityFormEl = document.getElementById("cityname");
-let cityName = cityFormEl.value.trim(); //grab input from form and trim
-var submitButton = document.getElementById('btn');
-
+let submitButton = document.getElementById('btn');
+let cityNameResult = document.getElementById('return');
 
 let formSubmitHandler = function (event) {
   event.preventDefault();
+  let cityName = cityFormEl.value.trim(); //grab input from form and trim
   if (cityName) {
-
-    getWeather(cityName)
-    cityFormEl.reset()
-    console.log(cityName); //not working
+    getWeather(cityName);
+    cityNameResult.append(cityName + 'Weather:');
   } else {
     alert("Enter a city and click the 'Get Weather' button.");
   }
@@ -21,20 +19,16 @@ let formSubmitHandler = function (event) {
 //Take the city name and get it's lat and long? 
 //Input lat/long into the queryURL for the onecall API URL
 
-let getWeather = function (cityName) {
+let getWeather = function(cityName) {
   const APIkey = 'f4458c0fc59bb2bcd5a17322c84ac36e';
-  let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`;
-
-  fetch(queryURL)
-    .then(function (response) { //take the response from the API call
+  let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIkey}`;
+  fetch(queryURL).then(function(response) { //take response from API call
       return response.json();  //convert response to JSON
-    }
-    )
-    .then(function (data) {
+    }).then(function(data) {
       console.log(data);  //take converted data (now an array) and log it
       for (let i = 0; i < data.length; i++) {
-        let weatherData = document.createElement('div');
-        weatherData.textContent = data[i];
+        let weatherData = document.createElement('tr');
+        weatherData.textContent = data.wind[i];
         weatherResults.appendChild(weatherData);
       }
     })
@@ -47,4 +41,4 @@ let getWeather = function (cityName) {
 
 //use local storage to store persistent data
 
-submitButton.addEventListener('click', getWeather);
+submitButton.addEventListener('click', formSubmitHandler);
