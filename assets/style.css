@@ -4,12 +4,42 @@ body {
     background-image: url(/assets/images/hermosabeach.jpg);
     background-size: cover;
     font-family: Monteserrat, Lora, Hind Madurai;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 } 
 
 .nav-wrapper {
-    background-color:steelblue
+    background-color: rgb(144,162,179);
 }
 
-#cardimage {
-    max-width: 200px;
+main {
+    flex: 1 0 auto;
+  }
+
+.searchbox {
+    background-color: rgb(171,176,180);
+    border-style: groove;
+    border-color: rgb(154, 171, 185);
+    border-width: 5px;
+    border-radius: 10px;
+    max-width: 40%;
+    
 }
+
+.form-label {
+    font-size: 20px;
+}
+
+.card-image {
+    max-width: 100px;
+    max-height: 100px;
+
+}
+
+.page-footer {
+    background-color: rgb(144,162,179);
+}
+
+/* footer rgb(40,40,42) */
+/* sky rgb(171,176,180) */
