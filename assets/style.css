@@ -3,7 +3,7 @@
 body {  
     background-image: url(/assets/images/hermosabeach.jpg);
     background-size: cover;
-    font-family: Monteserrat, Lora, Hind Madurai;
+    font-family:  Monteserrat, Lora, Hind Madurai;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -24,7 +24,10 @@ main {
     border-width: 5px;
     border-radius: 10px;
     max-width: 40%;
-    
+}
+
+#btn {
+    background-color:rgb(214,173,126);
 }
 
 .form-label {
