@@ -48,6 +48,8 @@ let getWeather = function (cityName) {
         uviRow.innerHTML = "UV Index: " + data.current.uvi;
 
         for (let i = 0; i < 5; i++) {
+          wfTable.insertRow([i]);
+          
           console.log("Day " + [i + 1] + " Humidity: " + data.daily[i].humidity);
           console.log("Day " + [i + 1] + " Temperature (F): " + data.daily[i].temp.day);
           console.log("Day " + [i + 1] + " Wind Speed: " + data.daily[i].wind_speed);
