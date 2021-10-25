@@ -19,11 +19,20 @@ main {
 
 .searchbox {
     background-color: rgb(171,176,180);
-    border-style: groove;
+    border-style: solid;
     border-color: rgb(154, 171, 185);
-    border-width: 5px;
-    border-radius: 10px;
-    max-width: 40%;
+    border-width: 3px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.resultsbox {
+    background-color: rgb(171,176,180);
+    border-style: solid;
+    border-color: rgb(154, 171, 185);
+    border-width: 3px;
+    border-radius: 5px;
+    margin: 5px;
 }
 
 #btn {
@@ -32,12 +41,6 @@ main {
 
 .form-label {
     font-size: 20px;
-}
-
-.card-image {
-    max-width: 100px;
-    max-height: 100px;
-
 }
 
 .page-footer {

@@ -15,33 +15,42 @@
   <!-- Header -->
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">Weather Dashboard</a>
+      <a href="#" class="brand-logo center">Weather Search</a>
     </div>
   </nav>
 
   <main>
 
     <!-- User Input Container -->
-    <div class="col-12 col-md-4 searchbox">
-      <div class="card">
-        <form id="user-form" class="card-body">
-          <label class="form-label" for="cityname">Enter a City Name</label>
-          <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" />
-          <button type="submit" class="btn" id="btn">Get Weather!</button>
-        </form>
+    <div class="row">
+      <div class="col s4 searchbox">
+        <div class="card">
+          <form id="user-form" class="card-body">
+            <label class="form-label" for="cityname">Enter a City Name</label>
+            <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" />
+            <button type="submit" class="btn" id="btn">Get Weather!</button>
+          </form>
+        </div>
       </div>
 
-      <!-- Results Container -->
-      <div class="col-12 col-md-4">
-        <table class="card" id="weatherdata">
-          <th>
-            <p id="return"></p>
-          </th>
-          <tbody id="weather-table" class="mx-auto text-center">
+      <!-- Current Weather Results Container -->
+      <div class="col s6 card resultsbox">
+        <table class="card">
+          <th id="tablehead"></th>
+          <tbody class="mx-auto text-center"  id="weatherdata">
+            
           </tbody>
         </table>
       </div>
 
+      <!-- Forecast Results Container -->
+      <div class="col s6 card resultsbox">
+        <table class="card">
+          <th id="tablehead2"></th>
+          <tbody class="mx-auto text-center" id="weatherforecast"></tbody>
+        </table>
+      </div>
+    </div>
   </main>
 
   <!-- Footer -->
