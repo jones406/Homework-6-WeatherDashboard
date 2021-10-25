@@ -1,7 +1,7 @@
 
 
 body {  
-    background-image: url(/assets/images/hermosabeach.jpg);
+    background-image: url(./images/hermosabeach.jpg);
     background-size: cover;
     font-family:  Monteserrat, Lora, Hind Madurai;
     display: flex;
@@ -18,15 +18,7 @@ main {
   }
 
 .searchbox {
-    background-color: rgb(171,176,180);
-    border-style: solid;
-    border-color: rgb(154, 171, 185);
-    border-width: 3px;
-    border-radius: 5px;
-    margin: 5px;
-}
-
-.resultsbox {
+    display: flex;
     background-color: rgb(171,176,180);
     border-style: solid;
     border-color: rgb(154, 171, 185);
@@ -39,9 +31,27 @@ main {
     background-color:rgb(214,173,126);
 }
 
-.form-label {
-    font-size: 20px;
+.resultsbox {
+    background-color: rgb(171,176,180);
+    border-style: solid;
+    border-color: rgb(154, 171, 185);
+    border-width: 3px;
+    border-radius: 5px;
+    margin: 20px;
+    display: inline-table;
 }
+
+.resultsbox {
+    opacity: 73%;
+}
+
+.tablehead {
+    text-align: center;
+}
+
+/* .form-label {
+    font-size: 20px;
+} */
 
 .page-footer {
     background-color: rgb(144,162,179);
