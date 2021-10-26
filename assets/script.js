@@ -11,10 +11,12 @@ let formSubmitHandler = function (event) {
   let cityName = cityFormEl.value.trim(); //grab input from form and trim
   if (cityName) {
     getWeather(cityName);
+    document.getElementsByClassName("resultsbox")[0].style.display = "table";
+    document.getElementsByClassName("resultsbox")[1].style.display = "table";
   } else {
     alert("Enter a city.");
   }
-};
+}
 
 //I want to use the One Call API as it gives all the required data, but the URL requires lat/long. To avoid the user having to enter lat/long, I first used the current weather API call that takes in city name and returns lat/long. The next API call takes returned lat/long to use in the one call API.
 let getWeather = function (cityName) {
@@ -34,17 +36,17 @@ let getWeather = function (cityName) {
         let cwHead = document.getElementById("cwtablehead"); //grab current weather table head
         cwHead.innerHTML = `${cityName}'s Current Weather`; //add header text w/ city name
         //create rows in the table
-        let tempRow = cwTable.insertRow(0); 
+        let tempRow = cwTable.insertRow(0);
         let humRow = cwTable.insertRow(1);
         let winRow = cwTable.insertRow(2);
         let uviRow = cwTable.insertRow(3);
-        
+
         //add data to rows
-        tempRow.innerHTML = "Temperature (F): " + data.current.temp; 
+        tempRow.innerHTML = "Temperature (F): " + data.current.temp;
         humRow.innerHTML = "Humidity: " + data.current.humidity;
         winRow.innerHTML = "Wind: " + data.current.wind_speed;
         uviRow.innerHTML = "UV Index: " + data.current.uvi;
-        
+
         //make weather forecast table header
         let wfHead = document.getElementById("wftablehead"); //grab forecast table head
         wfHead.innerHTML = `${cityName}'s 5-Day Weather Forecast`; //add header text w/ city name
@@ -55,13 +57,19 @@ let getWeather = function (cityName) {
           console.log("Day " + [i + 1] + " Temperature (F): " + data.daily[i].temp.day);
           console.log("Day " + [i + 1] + " Wind Speed: " + data.daily[i].wind_speed);
           console.log("Day " + [i + 1] + " UV Index: " + data.daily[i].uvi);
-          
           //create table and append
           let row = document.createElement("tr");
           for (let j = 0; j < 5; j++) {
             let cell = document.createElement("td");
-            let cellText = document.createTextNode("cell in row "+i+", column "+j);
-            cell.appendChild(cellText);
+            //let day1 = document.createTextNode("cell in row " + i + ", column " + j);
+            let d1h = document.createTextNode("Day " + [i + 1] + " Humidity: " + data.daily[i].humidity + " ");
+            let d1t = document.createTextNode("Day " + [i + 1] + " Temperature (F): " + data.daily[i].temp.day + " ");
+            let d1w = document.createTextNode("Day " + [i + 1] + " Wind Speed: " + data.daily[i].wind_speed + " ");
+            let d1u = document.createTextNode("Day " + [i + 1] + " UV Index: " + data.daily[i].uvi + " ");
+            cell.appendChild(d1h);
+            cell.appendChild(d1t);
+            cell.appendChild(d1w);
+            cell.appendChild(d1u);
             row.appendChild(cell);
           }
           wfTable.appendChild(row);
@@ -73,4 +81,4 @@ let getWeather = function (cityName) {
 //TO DO: return date, weather icons
 //TO DO: use local storage to store persistent data
 
-submitButton.addEventListener('click', formSubmitHandler); 
+submitButton.addEventListener('click', formSubmitHandler);

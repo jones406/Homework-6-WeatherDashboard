@@ -3,7 +3,7 @@
 body {  
     background-image: url(./images/hermosabeach.jpg);
     background-size: cover;
-    font-family:  Monteserrat, Lora, Hind Madurai;
+    font-family: Monteserrat, Lora, Hind Madurai;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -18,13 +18,13 @@ main {
   }
 
 .searchbox {
-    display: flex;
+    display:flex;
     background-color: rgb(171,176,180);
     border-style: solid;
     border-color: rgb(154, 171, 185);
     border-width: 3px;
     border-radius: 5px;
-    margin: 5px;
+    margin: 20px;
 }
 
 #btn {
@@ -42,6 +42,7 @@ main {
 }
 
 .resultsbox {
+    align-items: center;
     opacity: 73%;
 }
 

@@ -22,7 +22,7 @@
   <main>
 
     <!-- User Input Container -->
-    <div class="row">
+    <div class="row" id="input-container">
       <div class="col s3 searchbox">
         <div class="card">
           <form id="user-form" class="card-body">
@@ -34,18 +34,18 @@
       </div>
 
       <!-- Current Weather Results Container cwTable -->
-      <div class="col s12 card resultsbox">
+      <div class="col s6 card resultsbox center" style="display:none">
         <table class="card centered striped" id="cw">
-          <th class = "tablehead" id="cwtablehead"></th>
+          <th class="tablehead" id="cwtablehead"></th>
           <tbody class="mx-auto text-center" id="weatherdata">
           </tbody>
         </table>
       </div>
 
       <!-- Forecast Results Container wfTable -->
-      <div class="col s12 card resultsbox">
+      <div class="col s12 card resultsbox" style="display:none">
         <table class="card" id="wf">
-          <th class = "tablehead" id="wftablehead"></th>
+          <th class="tablehead" id="wftablehead"></th>
           <tbody class="mx-auto text-center" id="weatherforecast"></tbody>
         </table>
       </div>
