@@ -1,7 +1,7 @@
 body {  
     background-image: url(./images/hermosabeach.jpg);
     background-size: cover;
-    font-family: Monteserrat, Lora, Hind Madurai;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
     display: flex;
     min-height: 100vh;
     flex-direction: column;

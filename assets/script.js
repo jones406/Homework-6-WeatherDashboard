@@ -1,9 +1,16 @@
 let cityFormEl = document.getElementById("cityname");
 let submitButton = document.getElementById('btn');
 let cwTable = document.getElementById("weatherdata");
-// let wfTable = document.getElementById("weatherforecast");
-// let cw = document.getElementById("cw");
-// let wf = document.getElementById("wf");
+
+
+setInterval(currentTime, 60000);
+//grab date/time from moment API 
+function currentTime() {
+  let dateTime = moment().format('LLLL');
+  let timeEl = document.getElementById("currenttime");
+  timeEl.innerHTML = dateTime
+}
+currentTime();
 
 //User enters a city name and presses "Get Weather" button
 let formSubmitHandler = function (event) {
@@ -56,7 +63,7 @@ let getWeather = function (cityName) {
 
         //make weather forecast table header
         let wfHead = document.getElementById("wftablehead");
-        wfHead.innerHTML = `${cityName}'s 5-Day Forecast`;
+        wfHead.innerHTML = "5-Day Forecast";
         //loop thru forecast array for data to make a 5-day forecast
         for (let i = 0; i < 5; i++) {
           let card = document.createElement("div");
@@ -114,7 +121,6 @@ let getWeather = function (cityName) {
   })
 }
 
-//TO DO: return date
 //TO DO: use local storage to store persistent data
 
 submitButton.addEventListener('click', formSubmitHandler);
